@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { LoginService } from './login.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   submitted = false;
   
-  constructor(private fb: FormBuilder,private loginservice: LoginService) {
+  constructor(private fb: FormBuilder,private loginservice: LoginService,private router: Router) {
     this.loginForm = this.fb.group({
       email: ['', Validators.required],
       password: ['', Validators.required]
@@ -29,22 +30,26 @@ export class LoginComponent implements OnInit {
   }
   else{
     this.loginservice.AuthenticateUser(this.loginForm.value).subscribe((data) => {
-      // if (data.length > 0) {
-        localStorage.setItem("uname", this.loginForm.value.email)
-        console.log('data',data);
-        // this.rtr.navigate(['Home'])
+      this.router.navigate(['search-user'])
+    //   if (data.length > 0) {
+    //     localStorage.setItem("uname", this.loginForm.value.email)
+    //     console.log('data',data);
+        
     //   }
     //   else
     //     alert("Invalid Login ...")
     // }
-    //)
+    // )
   })
   }
 }
 
-
-
   ngOnInit(){
   }
-
 }
+
+
+
+  
+
+

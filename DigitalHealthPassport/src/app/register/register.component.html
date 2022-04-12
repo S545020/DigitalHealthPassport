@@ -1,14 +1,15 @@
 <body>
 <div class="login-form">
-    <form class="form-horizontal" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <form class="form-horizontal" [formGroup]="registerForm" (ngSubmit)="onSubmit(mymodal)">
           <div class="login">
             <h1 class="login-header">Registration</h1>
           </div>    
           <div class="control-group has-validation">
             <label class="control-label" for="organizationemailid">Organization Email ID</label>&nbsp;&nbsp;
-              <input type="text" id="organizationemailid" formControlName="organizationemailid" [ngClass]="{ 'is-invalid': submitted && f['organizationemailid'].errors }" name="organizationemailid" class="input-xlarge">
+              <input type="text" id="organizationemailid" formControlName="organizationemailid" email="true" [ngClass]="{ 'is-invalid': submitted && f['organizationemailid'].errors }" name="organizationemailid" class="input-xlarge">
               <div *ngIf="submitted && f['organizationemailid'].errors" class="invalid-feedback">
                 <div *ngIf="f['organizationemailid'].errors?.['required']">Organization Email ID is required</div>
+                <div *ngIf="f['organizationemailid'].errors?.['email']">Please provide valid Organization Email ID</div>
           </div>
             </div>
 
@@ -46,7 +47,7 @@
           </div>
           
           <br>
-          <a href="" class="forgot-pass">Refer to a password policy</a>
+          <a class="forgot-pass" (click)="policy(privacy)">Refer to a password policy</a>
 <br><br>
 <div class="check">
           <div class="form-check form-check-inline">
@@ -60,8 +61,36 @@
         </div>
 
           <div class="control-group-submit">
-              <button class="btn btn-success submit" >Sign Up</button>
+              <button class="btn btn-success submit">Sign Up</button>
           </div>
       </form>
 </div>
 </body>
+
+<ng-template #privacy let-modal>
+  <div class="modal-header">
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="closePolicy(modal)">Ok</button>
+  </div>
+</ng-template>
+
+<ng-template #mymodal let-modal>
+  <div class="modal-header">
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    Registered Successfully
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="Submit(modal)">Ok</button>
+  </div>
+</ng-template>
