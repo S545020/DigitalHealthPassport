@@ -10,24 +10,24 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SearchUserComponent } from './search-user/search-user.component';
-import { createPopper } from '@popperjs/core';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 const routerList:Routes=[
   {path:'Register',component:RegisterComponent},
   {path:'Login',component:LoginComponent},
-  {path:'search-user',component:SearchUserComponent}
+  {path:'search-user',component:SearchUserComponent},
+  {path:'forgot-password',component:ForgotPasswordComponent}
   
 ]
 
-const popcorn = document.querySelector('#popcorn');
-const tooltip = document.querySelector('#tooltip');
 
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent, 
-    LoginComponent, SearchUserComponent
+    LoginComponent, SearchUserComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,
@@ -40,5 +40,6 @@ ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
+  
 })
 export class AppModule { }
