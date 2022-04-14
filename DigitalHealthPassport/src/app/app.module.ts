@@ -11,6 +11,7 @@ import { LoginComponent } from './login/login.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SearchUserComponent } from './search-user/search-user.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { CovidTestDetailsComponent } from './covid-test-details/covid-test-details.component';
 
 const routerList:Routes=[
   {path:'Register',component:RegisterComponent},
@@ -27,7 +28,8 @@ const routerList:Routes=[
     AppComponent,
     RegisterComponent, 
     LoginComponent, SearchUserComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    CovidTestDetailsComponent
   ],
   imports: [
     BrowserModule,
