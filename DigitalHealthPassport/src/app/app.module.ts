@@ -17,7 +17,8 @@ const routerList:Routes=[
   {path:'Register',component:RegisterComponent},
   {path:'Login',component:LoginComponent},
   {path:'search-user',component:SearchUserComponent},
-  {path:'forgot-password',component:ForgotPasswordComponent}
+  {path:'forgot-password',component:ForgotPasswordComponent},
+  {path:'covid-test-details',component:CovidTestDetailsComponent}
   
 ]
 
