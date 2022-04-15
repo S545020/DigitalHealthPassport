@@ -19,8 +19,8 @@
           </div>
         <div class="login">
             <h4 class="login-header">Search for Traveler/Patient <br> Digital Health Passport Number</h4><br>
-            <input class="input" type="text">&nbsp;&nbsp; <i class="fa fa-search" style="font-size:24px;color:black"></i><br>
-            <button class="btn btn-success search">Search</button>
+            <input class="input" type="text" [(ngModel)]="dhpid">&nbsp;&nbsp; <i class="fa fa-search" style="font-size:24px;color:black"></i><br>
+            <button class="btn btn-success search" (click)="searchUser()">Search</button>
           </div>
     </div>
 

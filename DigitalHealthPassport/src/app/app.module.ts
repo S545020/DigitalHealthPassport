@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -10,24 +10,22 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SearchUserComponent } from './search-user/search-user.component';
-import { createPopper } from '@popperjs/core';
+import { ChangePasswordComponent } from './change-password/change-password.component';
+import { JwtInterceptor } from './jwt.interceptor';
 
 const routerList:Routes=[
   {path:'Register',component:RegisterComponent},
   {path:'Login',component:LoginComponent},
-  {path:'search-user',component:SearchUserComponent}
+  {path:'search-user',component:SearchUserComponent},
+  {path:'change-password',component:ChangePasswordComponent}
   
 ]
-
-const popcorn = document.querySelector('#popcorn');
-const tooltip = document.querySelector('#tooltip');
-
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent, 
-    LoginComponent, SearchUserComponent
+    LoginComponent, SearchUserComponent, ChangePasswordComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +36,7 @@ ReactiveFormsModule,
     HttpClientModule,
     NgbModule
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
