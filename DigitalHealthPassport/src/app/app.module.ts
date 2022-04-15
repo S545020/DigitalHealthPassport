@@ -12,12 +12,16 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SearchUserComponent } from './search-user/search-user.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { JwtInterceptor } from './jwt.interceptor';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { CovidTestDetailsComponent } from './covid-test-details/covid-test-details.component';
 
 const routerList:Routes=[
   {path:'Register',component:RegisterComponent},
   {path:'Login',component:LoginComponent},
   {path:'search-user',component:SearchUserComponent},
-  {path:'change-password',component:ChangePasswordComponent}
+  {path:'change-password',component:ChangePasswordComponent},
+  {path:'forgot-password',component:ForgotPasswordComponent},
+  {path:'covid-test-details',component:CovidTestDetailsComponent}
   
 ]
 
@@ -25,7 +29,9 @@ const routerList:Routes=[
   declarations: [
     AppComponent,
     RegisterComponent, 
-    LoginComponent, SearchUserComponent, ChangePasswordComponent
+    LoginComponent, SearchUserComponent, ChangePasswordComponent,
+    ForgotPasswordComponent,
+    CovidTestDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -38,5 +44,6 @@ ReactiveFormsModule,
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }],
   bootstrap: [AppComponent]
+  
 })
 export class AppModule { }
