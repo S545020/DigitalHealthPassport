@@ -12,13 +12,17 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SearchUserComponent } from './search-user/search-user.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { CovidTestDetailsComponent } from './covid-test-details/covid-test-details.component';
+import { CovidVaccinationRecordComponent } from './covid-vaccination-record/covid-vaccination-record.component';
+import { OneTimePasswordComponent } from './one-time-password/one-time-password.component';
 
 const routerList:Routes=[
   {path:'Register',component:RegisterComponent},
   {path:'Login',component:LoginComponent},
   {path:'search-user',component:SearchUserComponent},
   {path:'forgot-password',component:ForgotPasswordComponent},
-  {path:'covid-test-details',component:CovidTestDetailsComponent}
+  {path:'covid-test-details',component:CovidTestDetailsComponent},
+  {path:'covid-vaccination-record',component:CovidVaccinationRecordComponent},
+  {path:'onetimepassword',component:OneTimePasswordComponent}
   
 ]
 
@@ -30,7 +34,9 @@ const routerList:Routes=[
     RegisterComponent, 
     LoginComponent, SearchUserComponent,
     ForgotPasswordComponent,
-    CovidTestDetailsComponent
+    CovidTestDetailsComponent,
+    CovidVaccinationRecordComponent,
+    OneTimePasswordComponent
   ],
   imports: [
     BrowserModule,

@@ -47,7 +47,8 @@
           </div>
           
           <br>
-          <a class="forgot-pass" (click)="policy(privacy)">Refer to a password policy</a>
+          <a class="pass-policy" (click)="policy(privacy)">Refer to a password policy</a>
+          
 <br><br>
 <div class="check">
           <div class="form-check form-check-inline">
@@ -74,8 +75,9 @@
     </button>
   </div>
   <div class="modal-body">
-    
+    Password must contains length of 8 characters, one special character,one number.
   </div>
+
   <div class="modal-footer">
     <button type="button" class="btn btn-outline-dark" (click)="closePolicy(modal)">Ok</button>
   </div>
@@ -93,4 +95,4 @@
   <div class="modal-footer">
     <button type="button" class="btn btn-outline-dark" (click)="Submit(modal)">Ok</button>
   </div>
-</ng-template>
+
