@@ -21,11 +21,9 @@ export class SearchUserComponent implements OnInit {
 this.searchuserservice.searchUser(this.dhpid).subscribe((data: any) => {
   console.log('userdata',data);
   this.userdata = data;
-  this.router.navigate(['/covid-test-details'])
+  this.router.navigate(['/user-details'])
   this.searchuserservice.updateApprovalMessage(this.userdata)
 })
-
-
   }
 
   ngOnInit() {

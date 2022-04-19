@@ -14,6 +14,8 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
 import { JwtInterceptor } from './jwt.interceptor';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { CovidTestDetailsComponent } from './covid-test-details/covid-test-details.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
+import { UploadCovidVaccinationReportComponent } from './upload-covid-vaccination-report/upload-covid-vaccination-report.component';
 
 const routerList:Routes=[
   {path:'Register',component:RegisterComponent},
@@ -21,8 +23,9 @@ const routerList:Routes=[
   {path:'search-user',component:SearchUserComponent},
   {path:'change-password',component:ChangePasswordComponent},
   {path:'forgot-password',component:ForgotPasswordComponent},
-  {path:'covid-test-details',component:CovidTestDetailsComponent}
-  
+  {path:'covid-test-details',component:CovidTestDetailsComponent},
+  {path:'user-details',component:UserDetailsComponent},
+  {path: 'upload-covid-vaccination-report',component:UploadCovidVaccinationReportComponent}
 ]
 
 @NgModule({
@@ -31,7 +34,9 @@ const routerList:Routes=[
     RegisterComponent, 
     LoginComponent, SearchUserComponent, ChangePasswordComponent,
     ForgotPasswordComponent,
-    CovidTestDetailsComponent
+    CovidTestDetailsComponent,
+    UserDetailsComponent,
+    UploadCovidVaccinationReportComponent
   ],
   imports: [
     BrowserModule,
