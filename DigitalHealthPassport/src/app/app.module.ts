@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -10,33 +10,37 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SearchUserComponent } from './search-user/search-user.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
+import { JwtInterceptor } from './jwt.interceptor';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { CovidTestDetailsComponent } from './covid-test-details/covid-test-details.component';
-import { CovidVaccinationRecordComponent } from './covid-vaccination-record/covid-vaccination-record.component';
-import { OneTimePasswordComponent } from './one-time-password/one-time-password.component';
+
+
+import { UserDetailsComponent } from './user-details/user-details.component';
+import { UploadCovidVaccinationReportComponent } from './upload-covid-vaccination-report/upload-covid-vaccination-report.component';
+
 
 const routerList:Routes=[
   {path:'Register',component:RegisterComponent},
   {path:'Login',component:LoginComponent},
   {path:'search-user',component:SearchUserComponent},
+  {path:'change-password',component:ChangePasswordComponent},
   {path:'forgot-password',component:ForgotPasswordComponent},
   {path:'covid-test-details',component:CovidTestDetailsComponent},
-  {path:'covid-vaccination-record',component:CovidVaccinationRecordComponent},
-  {path:'onetimepassword',component:OneTimePasswordComponent}
-  
+  {path:'user-details',component:UserDetailsComponent},
+  {path: 'upload-covid-vaccination-report',component:UploadCovidVaccinationReportComponent}
 ]
-
-
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent, 
-    LoginComponent, SearchUserComponent,
+    LoginComponent, SearchUserComponent, ChangePasswordComponent,
     ForgotPasswordComponent,
     CovidTestDetailsComponent,
-    CovidVaccinationRecordComponent,
-    OneTimePasswordComponent
+    UserDetailsComponent,
+    UploadCovidVaccinationReportComponent
+
   ],
   imports: [
     BrowserModule,
@@ -47,7 +51,7 @@ ReactiveFormsModule,
     HttpClientModule,
     NgbModule
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }],
   bootstrap: [AppComponent]
   
 })

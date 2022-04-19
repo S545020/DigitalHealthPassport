@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchUserService } from '../search-user/search-user.service';
 
 @Component({
   selector: 'app-covid-test-details',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CovidTestDetailsComponent implements OnInit {
 
-  constructor() { }
+  userdata: any;
+  constructor(private searchuserservice: SearchUserService) { }
+
+//   getDetails(event: any){
+//     this.userdata = event.target.value;
+// console.log('event',event);
+//   }
 
   ngOnInit() {
+    this.searchuserservice.approvalStageMessage.subscribe((data: any) => {
+    this.userdata = data;
+console.log('userdata1',JSON.stringify(data));
+    })
   }
 
 }

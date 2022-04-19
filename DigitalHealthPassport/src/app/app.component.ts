@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TokenstorageService } from './tokenstorage.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'DigitalHealthPassport';
+
+  constructor(private tokenstorageservice: TokenstorageService){
+
+  }
+
+  logout() {
+    this.tokenstorageservice.signOut();
+    window.location.reload();
+  }
 }

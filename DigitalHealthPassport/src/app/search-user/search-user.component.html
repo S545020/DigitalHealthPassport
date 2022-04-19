@@ -12,15 +12,15 @@
         <div class="dropdown">
         <i class="fa fa-user user" style="font-size:36px" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"></i>
         <ul class="dropdown-menu dropdown-menu-center" aria-labelledby="dropdownMenuButton1">
-            <li><a class="dropdown-item" href="#">Profile</a></li>
-            <li><a class="dropdown-item" href="#">Change Password</a></li>
+            <li><a class="dropdown-item" href="/user-details">Profile</a></li>
+            <li><a class="dropdown-item" href="/change-password">Change Password</a></li>
             <li><a class="dropdown-item" href="#">Logout</a></li>
           </ul>
           </div>
         <div class="login">
             <h4 class="login-header">Search for Traveler/Patient <br> Digital Health Passport Number</h4><br>
-            <input class="input" type="text">&nbsp;&nbsp; <i class="fa fa-search" style="font-size:24px;color:black"></i><br>
-            <button class="btn btn-success search">Search</button>
+            <input class="input" type="text" [(ngModel)]="dhpid">&nbsp;&nbsp; <i class="fa fa-search" style="font-size:24px;color:black"></i><br>
+            <button class="btn btn-success search" (click)="searchUser()">Search</button>
           </div>
     </div>
 

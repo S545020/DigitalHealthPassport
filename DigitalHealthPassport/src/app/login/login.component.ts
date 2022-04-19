@@ -30,6 +30,10 @@ export class LoginComponent implements OnInit {
   }
   else{
     this.loginservice.AuthenticateUser(this.loginForm.value).subscribe((data) => {
+      localStorage.setItem('dhpid',data.user.dhp_id);
+      localStorage.setItem('userid',data.user._id);
+      localStorage.setItem('token',data.token);
+      console.log('data',data);
       this.router.navigate(['search-user'])
     //   if (data.length > 0) {
     //     localStorage.setItem("uname", this.loginForm.value.email)
