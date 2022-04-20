@@ -26,6 +26,10 @@ this.searchuserservice.searchUser(this.dhpid).subscribe((data: any) => {
 })
   }
 
+  logout(){
+    localStorage.clear();
+  }
+
   ngOnInit() {
   }
 

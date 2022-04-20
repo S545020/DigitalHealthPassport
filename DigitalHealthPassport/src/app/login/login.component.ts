@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
   }
   else{
     this.loginservice.AuthenticateUser(this.loginForm.value).subscribe((data) => {
+      localStorage.clear();
       localStorage.setItem('dhpid',data.user.dhp_id);
       localStorage.setItem('userid',data.user._id);
       localStorage.setItem('token',data.token);

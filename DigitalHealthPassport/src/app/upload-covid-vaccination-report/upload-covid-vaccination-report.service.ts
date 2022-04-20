@@ -7,17 +7,22 @@ import { Observable } from 'rxjs';
 })
 export class UploadCovidVaccinationReportService {
 
-  base_url = "https://dhp-server.herokuapp.com/api/issuer/intake/624cc5e9613410e0bb2a26ad";
+  base_url = "https://dhp-server.herokuapp.com/api/issuer/intake";
+
+  user_id = localStorage.getItem('userid')
+
+  user_token = localStorage.getItem('token');
 
   constructor(private htc: HttpClient) { }
 
   uploadfile(usrInfo: any): Observable<any> {
+    // const headers = new HttpHeaders().set('Authorization', `Bearer ${this.user_token}`);
     const reqOptns = {
       headers: new HttpHeaders({
-        'content-type': 'application/json'
+        'content-type': 'multipart/form-data'
       })
     }
     console.log(JSON.stringify(usrInfo))
-    return this.htc.post(this.base_url, JSON.stringify(usrInfo), reqOptns)
+    return this.htc.post(this.base_url + '/' + this.user_id, usrInfo)
   }
 }

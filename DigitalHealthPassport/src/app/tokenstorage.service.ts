@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-const TOKEN_KEY: any = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjRjYzVlOTYxMzQxMGUwYmIyYTI2YWQiLCJleHBpcnkiOjE2NDk0MzQyNjA1MzQsImlhdCI6MTY0OTQzNDI2MH0.azSHSQAYUWekhGsALsH1ckdYvfyLnbth7eYCZzoCQ-Y'
+const TOKEN_KEY: any = localStorage.getItem('token')
 const USER_KEY: any = 'auth-user';
 
 @Injectable({
