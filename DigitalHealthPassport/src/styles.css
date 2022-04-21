@@ -2,18 +2,22 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 
 .control-group{
-    margin-left: 280px;
+    margin-left: 150px;
     margin-top: 110px;
 }
 
 .login-form{
     max-width: 1150px;
-  width: 80%;
-  background-color: gainsboro;
+    width: 640px;
+    height: 650px;
+    /* margin: 7em auto; */
+    margin-top: 20px;
+    margin-left: 410px;
+  background-color: #FFFFFF;
   padding: 25px 30px;
   border-radius: 5px;
   box-shadow: 0 5px 10px rgba(0,0,0,0.15);
-    margin-left: 180px;
+   
 }
 
 body{
@@ -26,31 +30,31 @@ body{
 }
 
 .login-header{
-    margin-left:20px;
+    margin-left:25px;
 }
 
 .login{
     color:blue;
     margin-top: 50px;
-    margin-left: 365px;
+    margin-left: 200px;
 }
 
-.control-group-pass{
-    margin-left: 275px;
+.control-group-pass{ 
+    margin-left: 138px;
     margin-top: 30px;
 }
 
 .control-group-submit{
-    margin-left: 285px;
+    margin-left: 250px;
     margin-top: 80px;
 }
 .submit{
-    margin-left: 135px;
+    margin-left: 24px;
 }
 
 .forgot-pass{
     color: red;
-    margin-left: 100px;
+   
 }
 
 .invalid-feedback{

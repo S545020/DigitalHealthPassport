@@ -1,5 +1,5 @@
 .control-group-coviddetails{
-    margin-left: 300px;
+    margin-left: 140px;
     margin-top: 60px;
 }
 
@@ -10,14 +10,18 @@
 }
 
 .login-header{
-    margin-top: 30px;
-    margin-left: 280px;
+    margin-top: 80px;
+    margin-left: 140px;
 }
 
 .forgot-pass{
-    margin-left: 300px;
+    margin-left: 140px;
 }
 
 .user{
     float: right;
+}
+
+.login-form{
+    width: 730px;
 }

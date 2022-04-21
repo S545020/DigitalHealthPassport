@@ -19,8 +19,21 @@ export class UploadCovidTestReportComponent implements OnInit {
   formData: any;
 
   closeResult: any;
+  covidReport: any;
 
   constructor(private covidreportservice: UploadCovidVaccinationReportService,private modalService: NgbModal,private fb: FormBuilder) { }
+
+
+  selectReport(event: any){
+console.log('event',event.target.value);
+if(event.target.value == "covidtestreport"){
+  this.covidReport = "covid-report";
+}
+else if(event.target.value == "covidvaccinationreport"){
+  this.covidReport = "covid-vaccination";
+}
+
+  }
 
   onFilechange(event: any) {
 
@@ -33,7 +46,7 @@ export class UploadCovidTestReportComponent implements OnInit {
              this.formData = new FormData();
 
             let data = JSON.stringify({
-              "report": "covid-test", 
+              "report": this.covidReport, 
               "by": "phizer"
             })
 
@@ -62,7 +75,7 @@ export class UploadCovidTestReportComponent implements OnInit {
 
     closePolicy(modal: any){
       this.modalService.dismissAll(modal);
-      window.location.reload();
+      // window.location.reload();
     }
 
     getDismissReason(reason: any): string {

@@ -19,6 +19,7 @@ import { CovidTestDetailsComponent } from './covid-test-details/covid-test-detai
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { UploadCovidVaccinationReportComponent } from './upload-covid-vaccination-report/upload-covid-vaccination-report.component';
 import { UploadCovidTestReportComponent } from './upload-covid-test-report/upload-covid-test-report.component';
+import { QrcodeReaderComponent } from './qrcode-reader/qrcode-reader.component';
 
 
 const routerList:Routes=[
@@ -43,7 +44,8 @@ const routerList:Routes=[
     CovidTestDetailsComponent,
     UserDetailsComponent,
     UploadCovidVaccinationReportComponent,
-    UploadCovidTestReportComponent
+    UploadCovidTestReportComponent,
+    QrcodeReaderComponent
 
   ],
   imports: [

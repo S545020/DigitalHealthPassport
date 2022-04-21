@@ -1,92 +1,57 @@
-.control-group{
-    margin-left: 280px;
-    margin-top: 110px;
-}
-
-
-
 .login-form{
-    max-width: 1150px;
-  width: 100%;
-  background-color: gainsboro;
-  padding: 15px 30px;
-  border-radius: 5px;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
-    margin-left: 180px;
-}
-
-.login-header{
-    margin-left:65px;
-}
-
-.invalid-feedback{
-    margin-top: 10px;
-    margin-left: 150px;
-}
-
-.passValid{
-    margin-right: 80px;
-}
-
-.control-group-organization{
+    width: 900px;
+    margin-top: 5px;
+    height: 680px;
     margin-left: 295px;
-    margin-top: 30px;
 }
 
-.control-group-phonenumber{
-    margin-left: 332px;
-    margin-top: 30px;
+/* .login-header{
+    margin-top: 10px;
+} */
+
+.control-group{
+    margin-top: 95px;
 }
 
 .login{
-    color:blue;
-    margin-top: 50px;
-    margin-left: 295px;
+    margin-left: 225px;
+    margin-top: 20px;
+}
+
+.control-group-organization{
+    margin-top: 30px;
+    margin-left: 165px;
 }
 
 .control-group-pass{
-    margin-left: 368px;
     margin-top: 30px;
-}
-
-body{
-    height: 100vh;
-  /* display: flex; */
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  background: lightblue;
-}
-
-.control-group-submit{
-    margin-left: 380px;
-    margin-top: 50px;
+    margin-left: 230px;
 }
 
 .control-group-confpass{
-    margin-left: 307px;
     margin-top: 30px;
+    margin-left: 170px;
+}
+
+.control-group-phonenumber{
+    margin-top: 30px;
+    margin-left: 195px;
+}
+
+.form-horizontal{
+margin-left: 50px;
+}
+
+.forgot-pass{
+    margin-left: 180px;
 }
 
 .check{
     margin-top:15px;
-    margin-left: 380px;
+    margin-left: 220px;
 }
 
-.form-check1{
-    margin-left: 120px;
-}
-
-.submit{
-    margin-left: 135px;
-}
-
-.forgot-pass{
-    color: red;
-    margin-left: 295px;
-}
-
-.hyper{
-    margin-right: 10px;
-    color:red;
+.control-group-submit{
+    margin-left: 290px;
+    margin-top: 45px;
 }
