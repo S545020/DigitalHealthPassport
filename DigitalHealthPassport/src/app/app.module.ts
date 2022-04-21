@@ -18,6 +18,7 @@ import { CovidTestDetailsComponent } from './covid-test-details/covid-test-detai
 
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { UploadCovidVaccinationReportComponent } from './upload-covid-vaccination-report/upload-covid-vaccination-report.component';
+import { UploadCovidTestReportComponent } from './upload-covid-test-report/upload-covid-test-report.component';
 
 
 const routerList:Routes=[
@@ -28,7 +29,9 @@ const routerList:Routes=[
   {path:'forgot-password',component:ForgotPasswordComponent},
   {path:'covid-test-details',component:CovidTestDetailsComponent},
   {path:'user-details',component:UserDetailsComponent},
-  {path: 'upload-covid-vaccination-report',component:UploadCovidVaccinationReportComponent}
+  {path: 'upload-covid-vaccination-report',component:UploadCovidVaccinationReportComponent},
+  {path: 'upload-covid-test-report',component: UploadCovidTestReportComponent},
+  { path: '', redirectTo: '/Login', pathMatch: 'full' }
 ]
 
 @NgModule({
@@ -39,7 +42,8 @@ const routerList:Routes=[
     ForgotPasswordComponent,
     CovidTestDetailsComponent,
     UserDetailsComponent,
-    UploadCovidVaccinationReportComponent
+    UploadCovidVaccinationReportComponent,
+    UploadCovidTestReportComponent
 
   ],
   imports: [

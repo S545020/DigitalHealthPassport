@@ -12,6 +12,10 @@ export class UserDetailsComponent implements OnInit {
 
   constructor(private searchuserservice: SearchUserService) { }
 
+  logout(){
+    localStorage.clear();
+  }
+
   ngOnInit() {
     this.searchuserservice.approvalStageMessage.subscribe((data: any) => {
       this.userdata = data;

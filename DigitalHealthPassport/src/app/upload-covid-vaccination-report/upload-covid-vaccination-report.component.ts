@@ -9,8 +9,6 @@ import { UploadCovidVaccinationReportService } from './upload-covid-vaccination-
 })
 export class UploadCovidVaccinationReportComponent implements OnInit {
 
-  // file: File | null = null;
-
   public formGroup = this.fb.group({
     file: [null, Validators.required]
   });
@@ -22,8 +20,6 @@ export class UploadCovidVaccinationReportComponent implements OnInit {
   constructor(private covidreportservice: UploadCovidVaccinationReportService,private fb: FormBuilder) { }
 
   onFilechange(event: any) {
-    // console.log(event.target.files[0])
-    // this.file = event.target.files[0]
 
     const file:File = event.target.files[0];
 
@@ -42,20 +38,6 @@ export class UploadCovidVaccinationReportComponent implements OnInit {
             this.formData.append("holderDHPId","DHP-3151dfee")
             this.formData.append("metaData",data)
         }
-
-    // const reader = new FileReader();
-
-  //  if (event.target.files && event.target.files.length) {
-  //    this.fileName = event.target.files[0].name;
-  //    const [file] = event.target.files;
-  //    reader.readAsDataURL(file);
-    
-  //    reader.onload = () => {
-  //      this.formGroup.patchValue({
-  //        file: reader.result
-  //      });
-  //    };
-  //  }
   }
   
   upload() {
@@ -66,6 +48,11 @@ export class UploadCovidVaccinationReportComponent implements OnInit {
         console.log('response',resp);
       })
     }
+
+    logout(){
+      localStorage.clear();
+    }
+
     ngOnInit(){
     }
   }

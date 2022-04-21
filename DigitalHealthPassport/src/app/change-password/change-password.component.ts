@@ -27,6 +27,10 @@ export class ChangePasswordComponent implements OnInit {
   }
 }
 
+logout(){
+  localStorage.clear();
+}
+
 ngOnInit(): void {
   
 }

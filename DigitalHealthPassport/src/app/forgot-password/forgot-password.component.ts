@@ -30,6 +30,10 @@ export class ForgotPasswordComponent implements OnInit {
   }
   }
 
+  logout(){
+    localStorage.clear();
+  }
+
   ngOnInit(): void {
   }
 
